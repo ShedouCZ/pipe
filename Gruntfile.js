@@ -99,11 +99,11 @@ module.exports = function(grunt) {
 					//'Vendor/es5-shim/es5-shim.js',
 					//'Vendor/es5-shim/es5-sham.js',
 					'Vendor/jquery/dist/jquery.js',
-					'Vendor/moment/moment.js',
+					//'Vendor/moment/moment.js',
 					//'js/modernizr.preserve3d.js', // brings modernizr for defunctr
-					'js/modernizr.custom.svg.js',   // // brings modernizr for defunctr
-					'Vendor/defunctr/src/defunctr.js',
-					'Vendor/moment-range/lib/moment-range.js',
+					//'js/modernizr.custom.svg.js',   // // brings modernizr for defunctr
+					//'Vendor/defunctr/src/defunctr.js',
+					//'Vendor/moment-range/lib/moment-range.js',
 					'js/app.js',
 				],
 				dest: 'webroot/js/site-pre.js',
@@ -115,20 +115,21 @@ module.exports = function(grunt) {
 			js_post: {
 				src: [
 					//'Vendor/react/react.js',
-					'Vendor/moment/locale/cs.js',
-					'Vendor/moment-timezone/builds/moment-timezone-with-data-2010-2020.min.js',
-					'Vendor/bootstrap/js/transition.js',
-					'Vendor/bootstrap/js/collapse.js',
+					//'Vendor/moment/locale/cs.js',
+					//'Vendor/moment-timezone/builds/moment-timezone-with-data-2010-2020.min.js',
+					//'Vendor/bootstrap/js/transition.js',
+					//'Vendor/bootstrap/js/collapse.js',
 					'Vendor/bootstrap/dist/js/bootstrap.js',
-					'Vendor/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js',
+					//'Vendor/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js',
 					//'dist/jsx-combined.js',
-					'Vendor/jquery-serialize-object/jquery.serialize-object.js',
-					'Vendor/H5F/h5f.min.js', // ie9 validation library
-					'Vendor/bootstrap-validator/js/validator.js',
+					//'Vendor/jquery-serialize-object/jquery.serialize-object.js',
+					//'Vendor/H5F/h5f.min.js', // ie9 validation library
+					//'Vendor/bootstrap-validator/js/validator.js',
 					'Vendor/bootbox.js/bootbox.js',
-					'Vendor/hammerjs/hammer.js',
-					'Vendor/jquery-hammerjs/jquery.hammer.js',
+					//'Vendor/hammerjs/hammer.js',
+					//'Vendor/jquery-hammerjs/jquery.hammer.js',
 					'Vendor/Sortable/Sortable.js',
+					'Vendor\dropzone\dist\dropzone.js',
 					'js/dom-ready.js'
 				],
 				dest: 'webroot/js/site-post.js',
@@ -173,7 +174,15 @@ module.exports = function(grunt) {
 			},
 			css: {
 				src: [
-					'css/*.css'
+					'css/*.css',
+					'css/overrides/eonasdan-datetimepicker-bs.css',
+					'dist/bootstrap.css',
+					'Vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css',
+					'css/bootstrap-validation.css',
+					'Vendor/font-awesome/css/font-awesome.css',
+					'Vendor/fullcalendar/dist/fullcalendar.css',
+					'Vendor/summernote/dist/summernote.css',
+					'css/admin/*.css',
 				],
 				dest: 'webroot/css/site.css',
 				nonull: true,
@@ -194,35 +203,10 @@ module.exports = function(grunt) {
 					separator: '\n'
 				}
 			},
-			css_legacy: {
-				src: [
-					// datetimepicker and its dependecies on bootstrap
-					'css/legacy/*.css',
-					'css/legacy/modules/*.css'
-				],
-				dest: 'webroot/css/legacy.css',
-				nonull: true,
-				options: {
-					separator: '\n'
-				}
-			},
 			css_admin: {
 				src: [
-					'css/overrides/eonasdan-datetimepicker-bs.css',
-					'dist/bs-custom.css',
-					'Vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css',
-					'dist/bootstrap.css',
-					'css/bootstrap-validation.css',
-					'Vendor/font-awesome/css/font-awesome.css',
-					'Vendor/fullcalendar/dist/fullcalendar.css',
-					'Vendor/summernote/dist/summernote.css',
-					'css/admin/*.css',
-					'css/superfish.css',
-					'css/type.css',
-					'css/search-bar.css',
-					'css/theme806overrides.css'
 				],
-				dest: 'webroot/css/site-admin.css',
+				dest: 'webroot/css/admin-site.css',
 				nonull: true,
 				options: {
 					separator: '\n'
@@ -265,7 +249,6 @@ module.exports = function(grunt) {
 			site: {
 				files: {
 					'webroot/css/site.css': 'webroot/css/site.css',
-					'webroot/css/legacy.css': 'webroot/css/legacy.css'
 				}
 			}
 		},
@@ -314,7 +297,7 @@ module.exports = function(grunt) {
 
 	// Task definition
 	grunt.registerTask('default', ['scripts', 'stylesheets', 'copy']);
-	grunt.registerTask('stylesheets', ['less', 'concat:css', 'concat:css_admin', 'concat:css_legacy', 'concat:css_air_mode', /*'postcss',*/ 'cssmin']);
+	grunt.registerTask('stylesheets', ['less', 'concat:css', 'concat:css_admin', 'concat:css_air_mode', /*'postcss',*/ 'cssmin']);
 	grunt.registerTask('scripts', ['handlebars', /*'react',*/ 'concat:js', 'concat:js_post', 'concat:js_admin', 'concat:js_air_mode' /*, 'uglify'*/]);
 
 	grunt.registerTask('locales', ['po2json', 'json']);

@@ -24,6 +24,6 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 
     public function beforeFilter() {
-        $this->layout = 'bootstrap';
+        $this->layout = 'pipe';
     }
 }
