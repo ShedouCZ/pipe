@@ -7,7 +7,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => '',
-		'database' => 'beachklub',
+		'database' => 'pipe',
 		'prefix' => '',
 		'encoding' => 'utf8',
 	);
