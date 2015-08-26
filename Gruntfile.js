@@ -129,7 +129,7 @@ module.exports = function(grunt) {
 					//'Vendor/hammerjs/hammer.js',
 					//'Vendor/jquery-hammerjs/jquery.hammer.js',
 					'Vendor/Sortable/Sortable.js',
-					'Vendor\dropzone\dist\dropzone.js',
+					'Vendor/dropzone/dist/dropzone.js',
 					'js/dom-ready.js'
 				],
 				dest: 'webroot/js/site-post.js',
@@ -175,14 +175,9 @@ module.exports = function(grunt) {
 			css: {
 				src: [
 					'css/*.css',
-					'css/overrides/eonasdan-datetimepicker-bs.css',
 					'dist/bootstrap.css',
-					'Vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css',
-					'css/bootstrap-validation.css',
 					'Vendor/font-awesome/css/font-awesome.css',
-					'Vendor/fullcalendar/dist/fullcalendar.css',
-					'Vendor/summernote/dist/summernote.css',
-					'css/admin/*.css',
+					'Vendor/dropzone/dist/dropzone.css',
 				],
 				dest: 'webroot/css/site.css',
 				nonull: true,

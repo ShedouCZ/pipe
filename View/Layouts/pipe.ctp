@@ -26,12 +26,6 @@
   	<!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
 
     <link rel="stylesheet" href="<?php echo "/css/site.css?$version" ?>" type="text/css" media="screen">
-
-
-  	<!-- Latest compiled and minified JavaScript -->
-  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
 	<script src="<?php echo "/js/site-pre.js?$version"; ?>" type="text/javascript"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
