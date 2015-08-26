@@ -19,7 +19,7 @@
 			<?php echo $this->element('admin_navigation'); ?>
 		</div><!-- end col md 3 -->
 		<div class="col-md-9">
-			<?php echo $this->Form->create('Project', array('role'=>'form', 'class'=>'form-horizontal')); ?>
+			<?php echo $this->Form->create('Project', array('role'=>'form', 'class'=>'form-horizontal dropzone')); ?>
 
 				<div class="form-group">
 					<?php echo $this->Form->input('id', array('class'=>'form-control', 'placeholder'=>__('Id')));?>
@@ -31,10 +31,12 @@
 					<?php echo $this->Form->input('slug', array('class'=>'form-control', 'placeholder'=>__('Slug')));?>
 				</div>
 				<div class="form-group">
+					<input type="file" name="file" />
+				</div>
+				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-8">
 						<?php echo $this->Form->submit(__('Submit'), array('class'=>'btn btn-primary')); ?>
 					</div>
-
 				</div>
 
 			<?php echo $this->Form->end() ?>
