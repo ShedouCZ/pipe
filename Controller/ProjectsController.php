@@ -6,13 +6,13 @@ class ProjectsController extends AppController {
 	public $components = array('Paginator', 'Session');
 
 
-	public function admin_index() {
+	public function index() {
 		$this->Project->recursive = 0;
 		$this->set('projects', $this->Paginator->paginate());
 	}
 
 
-	public function admin_view($id = null) {
+	public function view($id = null) {
 		if (!$this->Project->exists($id)) {
 			throw new NotFoundException(__('Invalid project'));
 		}
@@ -20,7 +20,7 @@ class ProjectsController extends AppController {
 		$this->set('project', $this->Project->find('first', $options));
 	}
 
-	public function admin_add() {
+	public function add() {
 		if ($this->request->is('post')) {
 			$this->Project->create();
 			if ($this->Project->save($this->request->data)) {
@@ -32,7 +32,7 @@ class ProjectsController extends AppController {
 		}
 	}
 
-	public function admin_edit($id = null) {
+	public function edit($id = null) {
 		if (!$this->Project->exists($id)) {
 			throw new NotFoundException(__('Invalid project'));
 		}
@@ -49,7 +49,7 @@ class ProjectsController extends AppController {
 		}
 	}
 
-	public function admin_delete($id = null) {
+	public function delete($id = null) {
 		$this->Project->id = $id;
 		if (!$this->Project->exists()) {
 			throw new NotFoundException(__('Invalid project'));

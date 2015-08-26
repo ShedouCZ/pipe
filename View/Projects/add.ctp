@@ -6,7 +6,7 @@
 				<ul class="nav nav-pills pull-right">
 					<li><?php echo $this->Html->link('<span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;' . __('List Projects'), array('action'=>'index'), array('escape'=>false)); ?></li>
 				</ul>
-				<h1><?php echo __('Admin Add Project'); ?></h1>
+				<h1><?php echo __('Add Project'); ?></h1>
 			</div>
 		</div>
 	</div>
